@@ -1,0 +1,27 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1590537417109.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "31AF227F",
+    "lastKnownWriteTime" : 1590542106,
+    "last_content_update" : 1590542106781,
+    "path" : "~/Desktop/Data Scientist/Aprende a nalizar los datos del covid 19/Covid19/Analisis_covid19.Rmd",
+    "project_path" : "Analisis_covid19.Rmd",
+    "properties" : {
+        "cursorPosition" : "53,16",
+        "last_setup_crc32" : "",
+        "scrollLine" : "42",
+        "tempName" : "Untitled1"
+    },
+    "read_only" : false,
+    "read_only_alternatives" : [
+    ],
+    "relative_order" : 1,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_markdown"
+}

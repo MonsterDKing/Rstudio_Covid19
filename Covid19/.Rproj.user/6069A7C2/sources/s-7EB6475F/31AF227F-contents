@@ -1,0 +1,69 @@
+---
+title: "Analisis COVID 19"
+author: "Pedro manuel salas galindo"
+date: "5/26/2020"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(reticulate)
+library(knitr)
+library(tidyverse)
+use_condaenv(condaenv = "datos",required = TRUE)
+```
+
+
+# Carga y limpiesa  preliminar de los datos
+
+los datos vienen  que se van a analizar en este documento , proceden de la compilacion hecha por usuarios de [Kaggle](https://www.kaggle.com/imdevskp/corona-virus-report/kernels). la fecha del analisis empieza el 26 de mayo de 2020 , utilizando la version numero 73 recopilada en la web anterior. 
+
+
+## Funcion python 
+
+```{python}
+import pandas as pd
+datos = pd.read_csv("covid_19_clean_complete.csv")
+datos.head(10) 
+```
+
+## Funcion en r con python usando pandas en r
+```{r}
+pd <- import("pandas")
+datos <- pd$read_csv("covid_19_clean_complete.csv")
+kable(head(datos,10))
+```
+
+## Usar solamente r
+
+```{r}
+datos <- read.csv("covid_19_clean_complete.csv")
+kable(head(datos,10))
+```
+
+## Usar tidyverse
+
+```{r}
+datos <- read.csv("covid_19_clean_complete.csv")
+datos %>% head(10) %>% kable()
+```
+
+## Estructura de los datos
+```{r}
+str(datos)
+colnames(datos) = c("Provincia_Estado",
+                    "Pais_Region",
+                    "Latitud",  
+                    "Longitud",
+                    "Fecha",
+                    "Casos_Confirmados",
+                    "Casos_Muertos",
+                    "Casos_Recuperados")
+
+str(datos)
+
+datos %>% head() %>% kable()
+
+```
+
+

@@ -1,0 +1,14 @@
+"1","                 Province/State       Country/Region  ...  Deaths  Recovered
+0                           NaN          Afghanistan  ...       0          0
+1                           NaN              Albania  ...       0          0
+2                           NaN              Algeria  ...       0          0
+3                           NaN              Andorra  ...       0          0
+4                           NaN               Angola  ...       0          0
+5                           NaN  Antigua and Barbuda  ...       0          0
+6                           NaN            Argentina  ...       0          0
+7                           NaN              Armenia  ...       0          0
+8  Australian Capital Territory            Australia  ...       0          0
+9               New South Wales            Australia  ...       0          0
+
+[10 rows x 8 columns]
+"
