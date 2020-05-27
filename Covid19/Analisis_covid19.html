@@ -637,7 +637,7 @@ kable(head(datos,10))</code></pre>
 <div id="usar-tidyverse" class="section level2">
 <h2>Usar tidyverse</h2>
 <pre class="r"><code>datos &lt;- read.csv(&quot;covid_19_clean_complete.csv&quot;)
-datos %&gt;% head(10) %&gt;% kable()</code></pre>
+datos %&gt;% head(10) %&gt;% kable() #%&gt;% kable_styling()</code></pre>
 <table>
 <thead>
 <tr class="header">
@@ -758,7 +758,7 @@ datos %&gt;% head(10) %&gt;% kable()</code></pre>
 <div id="estructura-de-los-datos" class="section level2">
 <h2>Estructura de los datos</h2>
 <pre class="r"><code>str(datos)</code></pre>
-<pre><code>## 'data.frame':    33125 obs. of  8 variables:
+<pre><code>## &#39;data.frame&#39;:    33125 obs. of  8 variables:
 ##  $ Province.State: Factor w/ 81 levels &quot;&quot;,&quot;Alberta&quot;,&quot;Anguilla&quot;,..: 1 1 1 1 1 1 1 1 6 49 ...
 ##  $ Country.Region: Factor w/ 188 levels &quot;Afghanistan&quot;,..: 1 2 3 4 5 6 7 8 9 9 ...
 ##  $ Lat           : num  33 41.2 28 42.5 -11.2 ...
@@ -777,7 +777,7 @@ datos %&gt;% head(10) %&gt;% kable()</code></pre>
                     &quot;Casos_Recuperados&quot;)
 
 str(datos)</code></pre>
-<pre><code>## 'data.frame':    33125 obs. of  8 variables:
+<pre><code>## &#39;data.frame&#39;:    33125 obs. of  8 variables:
 ##  $ Provincia_Estado : Factor w/ 81 levels &quot;&quot;,&quot;Alberta&quot;,&quot;Anguilla&quot;,..: 1 1 1 1 1 1 1 1 6 49 ...
 ##  $ Pais_Region      : Factor w/ 188 levels &quot;Afghanistan&quot;,..: 1 2 3 4 5 6 7 8 9 9 ...
 ##  $ Latitud          : num  33 41.2 28 42.5 -11.2 ...
@@ -863,6 +863,22 @@ str(datos)</code></pre>
 </tr>
 </tbody>
 </table>
+<ul>
+<li>Cualitativas se convierten con ‘factor’ o bien ‘as.factor’</li>
+<li>Ordinales que basicamente son cualidades con un orden estos se pueden convertir con la funcion ‘ordered’</li>
+<li>Cuantitativos se convierten con ‘as.numeric’ lo convierte a valor numero</li>
+</ul>
+<pre class="r"><code>datos$Fecha  %&lt;&gt;% mdy()
+str(datos)</code></pre>
+<pre><code>## &#39;data.frame&#39;:    33125 obs. of  8 variables:
+##  $ Provincia_Estado : Factor w/ 81 levels &quot;&quot;,&quot;Alberta&quot;,&quot;Anguilla&quot;,..: 1 1 1 1 1 1 1 1 6 49 ...
+##  $ Pais_Region      : Factor w/ 188 levels &quot;Afghanistan&quot;,..: 1 2 3 4 5 6 7 8 9 9 ...
+##  $ Latitud          : num  33 41.2 28 42.5 -11.2 ...
+##  $ Longitud         : num  65 20.17 1.66 1.52 17.87 ...
+##  $ Fecha            : Date, format: &quot;2020-01-22&quot; &quot;2020-01-22&quot; ...
+##  $ Casos_Confirmados: int  0 0 0 0 0 0 0 0 0 0 ...
+##  $ Casos_Muertos    : int  0 0 0 0 0 0 0 0 0 0 ...
+##  $ Casos_Recuperados: int  0 0 0 0 0 0 0 0 0 0 ...</code></pre>
 </div>
 </div>
 

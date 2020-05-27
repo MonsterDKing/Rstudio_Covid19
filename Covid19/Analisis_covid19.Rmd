@@ -9,8 +9,14 @@ output: html_document
 knitr::opts_chunk$set(echo = TRUE)
 library(reticulate)
 library(knitr)
-library(tidyverse)
+#library(kableExtra)
+library(tidyverse) #&>% concatenar
+library(magrittr) #<%>%
+library(lubridate) #libreria para manejar las fechas
+
+
 use_condaenv(condaenv = "datos",required = TRUE)
+#py_install("pandas") descomentar si no tenemos pandas carajo
 ```
 
 
@@ -45,7 +51,7 @@ kable(head(datos,10))
 
 ```{r}
 datos <- read.csv("covid_19_clean_complete.csv")
-datos %>% head(10) %>% kable()
+datos %>% head(10) %>% kable() #%>% kable_styling()
 ```
 
 ## Estructura de los datos
@@ -65,5 +71,19 @@ str(datos)
 datos %>% head() %>% kable()
 
 ```
+
+* Cualitativas se convierten con 'factor' o bien 'as.factor'
+* Ordinales que basicamente son cualidades con un orden estos se pueden convertir con la funcion 'ordered' 
+* Cuantitativos se convierten con 'as.numeric' lo convierte a valor numero 
+
+
+```{r}
+datos$Fecha  %<>% mdy()
+str(datos)
+```
+
+
+
+
 
 
